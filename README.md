@@ -98,12 +98,13 @@ Notifire provides a single API to manage providers across multiple channels with
 - [x] [Sendgrid](https://github.com/notifirehq/notifire/tree/master/providers/sendgrid)
 - [x] [Mailgun](https://github.com/notifirehq/notifire/tree/master/providers/mailgun)
 - [ ] SES
-- [ ] POSTMARK
-- [ ] NodeMailer
+- [x] [Postmark](https://github.com/notifirehq/notifire/tree/master/providers/postmark)
+- [x] [NodeMailer](https://github.com/notifirehq/notifire/tree/master/providers/nodemailer)
+- [x] [Mailjet](https://github.com/notifirehq/notifire/tree/master/providers/mailjet)
 
 #### 📞 SMS
 - [x] [Twilio](https://github.com/notifirehq/notifire/tree/master/providers/twilio)
-- [ ] Plivo
+- [x] [Plivo](https://github.com/notifirehq/notifire/tree/master/providers/plivo)
 - [ ] Nexmo (Vonage)
 
 #### 📱 Push
