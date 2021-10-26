@@ -4,7 +4,7 @@ import Vonage from '@vonage/server-sdk';
 export class NexmoProvider implements ISmsProvider {
   id = 'nexmo';
   channelType = ChannelTypeEnum.SMS as ChannelTypeEnum.SMS;
-  private vonage: Vonage;
+  vonage: Vonage;
 
   constructor(
     private config: {
@@ -15,17 +15,23 @@ export class NexmoProvider implements ISmsProvider {
   ) {
     this.vonage = new Vonage({
       apiKey: this.config.apiKey,
-      apiSecret: this.config.apiSecret
+      apiSecret: this.config.apiSecret,
     });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async sendMessage(options: ISmsOptions): Promise<any> {
     return await new Promise((resolve, reject) => {
-      this.vonage.message.sendSms(this.config.from, options.to, options.content, {}, (err, data) => {
-        if (err) reject(err);
-        resolve(data);
-      });
+      this.vonage.message.sendSms(
+        this.config.from,
+        options.to,
+        options.content,
+        {},
+        (err, data) => {
+          if (err) reject(err);
+          resolve(data);
+        }
+      );
     });
   }
 }
